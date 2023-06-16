@@ -6,13 +6,16 @@ function listarPessoas(lista) {
         let classificacao = "";
 
         // Determinar a classificação com base na idade da pessoa
-        if (idade < 12) {
+        if (idade >= 0 && idade < 12) {
             classificacao = "criança";
         }
         else if (idade >= 12 && idade <= 17) {
             classificacao = "adolescente";
         }
-        else { classificacao = "adulto"; }
+        else if (idade > 17) { 
+            classificacao = "adulto"; 
+        }
+        else {classificacao = "Informe uma idade válida";}
 
         // Exibir informações da pessoa, incluindo a classificação
         console.log(`Nome: ${nome}, Idade: ${idade}, Email: ${email}, Classificação: ${classificacao}`);
